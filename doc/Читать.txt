@@ -25,44 +25,45 @@
             Фичи Lombok:: https://urvanov.ru/2015/09/22/project-lombok/
             Is it safe to use Project Lombok?: https://stackoverflow.com/questions/3852091/548473
 
-К уроку 2 (https://stepik.org/lesson/468537/step/1?unit=459361):
+К уроку 2:
 
-
-
-
-==========================================================================
-
-    2.1 Spring Data JPA. ApplicationRunner
-        Spring Data:
-            http://www.baeldung.com/the-persistence-layer-with-spring-data-jpa
-            https://www.youtube.com/watch?v=nwM7A4TwU3M
-        Common application Data properties
-            https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#data-properties
-        ApplicationRunner and CommandLineRunner
-            https://dzone.com/articles/spring-boot-applicationrunner-and-commandlinerunne
+    2.1 Spring Data JPA. ApplicationRunner (https://stepik.org/lesson/468537/step/1?unit=459361)
+        Spring Data (https://spring.io/projects/spring-data):
+            Introduction to Spring Data JPA: http://www.baeldung.com/the-persistence-layer-with-spring-data-jpa
+            Евгений Борисов — Spring Data: https://www.youtube.com/watch?v=nwM7A4TwU3M
+        Common application Data properties: https://docs.spring
+        .io/spring-boot/docs/current/reference/html/appendix-application-properties.html#data-properties
+        ApplicationRunner and CommandLineRunner: https://dzone.com/articles/spring-boot-applicationrunner-and-commandlinerunne
         Проблема N+1. Стратегии загрузки коллекций
             N+1 selects issue: https://stackoverflow.com/questions/97197/548473
             в JPA: https://dou.ua/lenta/articles/jpa-fetch-types/
             в Hibernate: https://dou.ua/lenta/articles/hibernate-fetch-types/
-        Hibernate configurations
+        Hibernate configurations:
             hibernate.jdbc.fetch_size vs hibernate.jdbc.batch_size: https://stackoverflow.com/questions/21257819/548473
-        Open Session In View Anti-Pattern. spring.jpa.open-in-view
-            spring.jpa.open-in-view: https://stackoverflow.com/a/48222934/548473
+        Open Session In View Anti-Pattern. spring.jpa.open-in-view: https://stackoverflow.com/a/48222934/548473
 
-    2.2 H2. Популирование и конфигурирование
-        H2:
-            Performance Comparison: http://www.h2database.com/html/performance.html
-            How reliable is h2?: https://stackoverflow.com/questions/4687156/548473
-            Using H2 for a production: https://www.reddit.com/r/java/comments/6dpfhr/anyone_using_h2_database_for_a_production_spring/
-            Эволюция H2 + комментарии (тормозит на 50k+ таблицах): https://habr.com/ru/post/446380/
-            H2 console: https://medium.com/@harittweets/how-to-connect-to-h2-database-during-development-testing-using-spring-boot-44bbb287570
-            Start H2 TCP server: https://stackoverflow.com/questions/37068808/548473
-        Loading Initial Data: https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
-        H2: NULL not allowed for column “ID”: https://stackoverflow.com/a/54697387/548473
+		2.2 H2. Популирование и конфигурирование (https://stepik.org/lesson/468538/step/1?unit=459362)
 
-        если у вас версия spring-boot 2.5.0 и выше, добавьте в application.yaml:
-        spring.jpa.defer-datasource-initialization: true
-        (https://stackoverflow.com/a/67678945/548473)
+      H2:
+				Performance Comparison: http://www.h2database.com/html/performance.html
+				How reliable is h2?: https://stackoverflow.com/questions/4687156/548473
+				Using H2 for a production: https://www.reddit.com/r/java/comments/6dpfhr/anyone_using_h2_database_for_a_production_spring/
+				Эволюция H2 + комментарии (тормозит на 50k+ таблицах): https://habr.com/ru/post/446380/
+				H2 console: https://medium.com/@harittweets/how-to-connect-to-h2-database-during-development-testing-using-spring-boot-44bbb287570
+				Start H2 TCP server: https://stackoverflow.com/questions/37068808/548473
+
+			Loading Initial Data: https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
+      H2: NULL not allowed for column “ID”: https://stackoverflow.com/a/54697387/548473
+
+      если у вас версия spring-boot 2.5.0 и выше, добавьте в application.yaml:
+      spring.jpa.defer-datasource-initialization: true
+      (https://stackoverflow.com/a/67678945/548473)
+
+				======================================================================
+
+
+
+
 
     2.3 Рефакторинг model. Spring Data JPA @Query
         hashCode/equals в Entity (не делайте сравнение по всем полям!): https://stackoverflow.com/questions/5031614/548473
