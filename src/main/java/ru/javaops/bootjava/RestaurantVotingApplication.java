@@ -29,7 +29,7 @@ public class RestaurantVotingApplication implements ApplicationRunner {
 //        userRepo.save(new User("admin@javaops.ru", "Имя Admin", "Фамилия Admin",
 //                "admin", Set.of(Role.ROLE_USER, Role.ROLE_ADMIN)));
 
-        System.out.println(userRepo.findAll());
+        System.out.println(userRepo.findByLastNameContainingIgnoreCase("фамилия"));
 
     }
 }

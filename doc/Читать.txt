@@ -1,4 +1,6 @@
-К уроку 1 (https://stepik.org/lesson/468533?unit=459353):
+Тот же курс: https://javaops.ru/view/bootjava
+
+К уроку 1:
 
 	1.2 Spring Boot maven plugin. Конвертация в WAR. Детали реализации (https://stepik.org/lesson/468534?unit=459354)
 		Spring Boot maven plugin: https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/
@@ -59,19 +61,23 @@
       spring.jpa.defer-datasource-initialization: true
       (https://stackoverflow.com/a/67678945/548473)
 
-				======================================================================
-
-
-
-
-
-    2.3 Рефакторинг model. Spring Data JPA @Query
+		2.3 Рефакторинг model. Spring Data JPA @Query (https://stepik.org/lesson/468539/step/1?unit=459363)
         hashCode/equals в Entity (не делайте сравнение по всем полям!): https://stackoverflow.com/questions/5031614/548473
         Field vs property access: https://stackoverflow.com/a/6084701/548473
         Spring Data JPA @Query: https://www.baeldung.com/spring-data-jpa-query
         Как работает Spring Data JPA: https://habr.com/ru/post/232381/#datajpa
         Query Creation: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
         Использование @Param, @RequestParam и @PathVariable: https://habr.com/ru/post/440214/
+
+
+
+
+				======================================================================
+
+
+
+
+
 
 
 К уроку 3 (https://javaops.ru/view/bootjava/lesson03):
