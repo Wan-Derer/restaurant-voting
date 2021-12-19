@@ -16,6 +16,11 @@ spring:
     username: sa
     password: sa
 
+  data:
+    rest:
+      base-path: /api
+      return-body-on-create: true
+
 
 #  h2:
 #    console:
