@@ -1,11 +1,16 @@
-package ru.javaops.bootjava.retaurantvoting.model;
+package ru.javaops.bootjava.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
+import org.springframework.util.StringUtils;
+import ru.javaops.bootjava.util.JsonDeserializers;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
@@ -15,7 +20,7 @@ import java.util.Set;
 @ToString(callSuper = true, exclude = {"password"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class User extends BaseEntity {
+public class User extends BaseEntity implements Serializable {
 
     @Column(name = "email", nullable = false, unique = true)
     @Email
@@ -33,6 +38,8 @@ public class User extends BaseEntity {
 
     @Column(name = "password")
     @Size(max = 256)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonDeserialize(using = JsonDeserializers.PasswordDeserializer.class)
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -44,5 +51,7 @@ public class User extends BaseEntity {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
-
+    public void setEmail(String email) {
+        this.email = StringUtils.isEmpty(email) ? null : email.toLowerCase();
+    }
 }

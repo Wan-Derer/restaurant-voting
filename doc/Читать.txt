@@ -15,17 +15,17 @@
 		Репозиторий BootJava: https://github.com/JavaOPs/bootjava
 		Системы управления версиями. Git: https://github.com/JavaOPs/basejava/blob/master/lesson/lesson1.md#-4-системы-управления-версиями-git
 
-    1.4 Проект Lombok (https://stepik.org/lesson/468536/step/1?unit=459356)
-        Подключение
-            Optional Dependencies: http://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html
-            Maven Scope for Lombok (Compile vs. Provided): https://stackoverflow.com/questions/29385921/maven-scope-for-lombok-compile-vs-provided
-            Exclude lombok in Spring Boot: https://stackoverflow.com/questions/45202639/548473
-            How does lombok work?: https://stackoverflow.com/a/6108457/548473
-            Abstract Syntax Tree transformations: http://notatube.blogspot.com/2010/12/project-lombok-creating-custom.html
-        Project Lombok
-            Объявляем войну бойлерплейту: https://habr.com/ru/post/142356/
-            Фичи Lombok:: https://urvanov.ru/2015/09/22/project-lombok/
-            Is it safe to use Project Lombok?: https://stackoverflow.com/questions/3852091/548473
+  1.4 Проект Lombok (https://stepik.org/lesson/468536/step/1?unit=459356)
+      Подключение
+          Optional Dependencies: http://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html
+          Maven Scope for Lombok (Compile vs. Provided): https://stackoverflow.com/questions/29385921/maven-scope-for-lombok-compile-vs-provided
+          Exclude lombok in Spring Boot: https://stackoverflow.com/questions/45202639/548473
+          How does lombok work?: https://stackoverflow.com/a/6108457/548473
+          Abstract Syntax Tree transformations: http://notatube.blogspot.com/2010/12/project-lombok-creating-custom.html
+      Project Lombok
+          Объявляем войну бойлерплейту: https://habr.com/ru/post/142356/
+          Фичи Lombok:: https://urvanov.ru/2015/09/22/project-lombok/
+          Is it safe to use Project Lombok?: https://stackoverflow.com/questions/3852091/548473
 
 К уроку 2:
 
@@ -96,35 +96,37 @@
         DelegatingPasswordEncoder: https://docs.spring.io/spring-security/site/docs/current/reference/html5/#authentication-password-storage-dpe
         @AuthenticationPrincipal: https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#mvc-authentication-principal
 
-
-
-				=====================================================================
-
-
-
-
-
-
-
-
-
-    4.3 Аутентификация пользователя из БД. AuthUser
+    4.3 Аутентификация пользователя из БД. AuthUser (https://stepik.org/lesson/468544/step/1?unit=459368)
         Authentication with a DB UserDetailsService: https://www.baeldung.com/spring-security-authentication-with-a-database
         Аутентификация с помощью UserDetailsService: https://www.codeflow.site/ru/article/spring-security-authentication-with-a-database
-        Ключевые сервисы Spring Security: https://ru.wikibooks.org/wiki/Spring_Security/%D0%9A%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5_%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B_Spring_Security
+        Ключевые сервисы Spring Security: https://ru.wikibooks.org/wiki/Spring_Security/Ключевые_сервисы_Spring_Security
         Java Based Configuration: https://www.tutorialspoint.com/spring/spring_java_based_configuration.htm
 
-    4.4 Role and GrantedAuthority
+    4.4 Role and GrantedAuthority (https://stepik.org/lesson/468545/step/1?unit=459369)
         Security Form Login: https://www.baeldung.com/spring-security-login
         Spring Security Expressions: https://www.baeldung.com/spring-security-expressions
         Role and GrantedAuthority: https://stackoverflow.com/a/19542316/548473
 
-    4.5 Basic authorization. Кастомизация Json
+    4.5 Basic authorization. Кастомизация Json (https://stepik.org/lesson/468546/step/1?unit=459370)
         Basic access authentication: https://en.wikipedia.org/wiki/Basic_access_authentication
         Decode and Encode Base64: https://decodebase64.com/
         Написание HTTP-запросов с помощью Curl (для Windows можно использовать Git Bash): http://rus-linux.net/lib.php?name=/MyLDP/internet/curlrus.html
         Password encoding with Spring Data REST: https://stackoverflow.com/questions/30260582/548473
         Access.WRITE_ONLY: https://stackoverflow.com/a/12505165/548473
+
+
+=====================================================================
+
+
+
+
+
+
+
+
+
+
+
 
 
 К уроку 5 (https://javaops.ru/view/bootjava/lesson05):
