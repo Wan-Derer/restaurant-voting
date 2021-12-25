@@ -1,10 +1,10 @@
-package ru.javaops.bootjava.repository;
+package ru.javaops.bootjava.retaurantvoting.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.transaction.annotation.Transactional;
-import ru.javaops.bootjava.model.User;
+import ru.javaops.bootjava.retaurantvoting.model.User;
 
 import java.util.List;
 import java.util.Optional;

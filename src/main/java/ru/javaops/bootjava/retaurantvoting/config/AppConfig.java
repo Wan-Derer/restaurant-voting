@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.configuration;
+package ru.javaops.bootjava.retaurantvoting.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.h2.tools.Server;

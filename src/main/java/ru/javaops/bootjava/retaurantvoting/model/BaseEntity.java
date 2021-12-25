@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.model;
+package ru.javaops.bootjava.retaurantvoting.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

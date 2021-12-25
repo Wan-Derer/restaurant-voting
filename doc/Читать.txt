@@ -86,8 +86,15 @@
 
 
 К уроку 4 (https://stepik.org/lesson/468542/step/1?unit=459366):
-    4.1 Подключение Security. Аутентификация по умолчанию
+    4.1 Подключение Security. Аутентификация по умолчанию (https://stepik.org/lesson/468542/step/1?unit=459366)
         Common application Security properties: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#security-properties
+
+		4.2 Конфигурирование в коде приложения. Password Encoding (https://stepik.org/lesson/468543/step/1?unit=459367)
+        InMemory Аутентификация: https://www.techiedelight.com/form-based-authentication-in-spring-boot-security/
+        Java API Examples: https://www.programcreek.com/java-api-examples/
+        Authentication: @Override vs @Autowired: https://stackoverflow.com/questions/42316643/548473
+        DelegatingPasswordEncoder: https://docs.spring.io/spring-security/site/docs/current/reference/html5/#authentication-password-storage-dpe
+        @AuthenticationPrincipal: https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#mvc-authentication-principal
 
 
 
@@ -100,14 +107,6 @@
 
 
 
-
-    4.2 Конфигурирование в коде приложения. Password Encoding
-        InMemory Аутентификация: https://www.techiedelight.com/form-based-authentication-in-spring-boot-security/
-        Java API Examples: https://www.programcreek.com/java-api-examples/
-        Authentication: @Override vs @Autowired: https://stackoverflow.com/questions/42316643/548473
-        DelegatingPasswordEncoder: https://docs.spring
-        .io/spring-security/site/docs/current/reference/html5/#authentication-password-storage-dpe
-        @AuthenticationPrincipal: https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#mvc-authentication-principal
 
     4.3 Аутентификация пользователя из БД. AuthUser
         Authentication with a DB UserDetailsService: https://www.baeldung.com/spring-security-authentication-with-a-database

@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.model;
+package ru.javaops.bootjava.retaurantvoting.model;
 
 public enum Role {
     ROLE_USER,

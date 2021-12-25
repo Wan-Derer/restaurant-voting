@@ -1,7 +1,6 @@
-package ru.javaops.bootjava.model;
+package ru.javaops.bootjava.retaurantvoting.model;
 
 import lombok.*;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
