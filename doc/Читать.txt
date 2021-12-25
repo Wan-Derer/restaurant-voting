@@ -85,23 +85,21 @@
         Аннотации Jackson: https://nsergey.com/jackson-annotations/
 
 
-
-=====================================================================
-
-
-
-
-
-
-
-
-
-К уроку 4 (https://javaops.ru/view/bootjava/lesson04):
+К уроку 4 (https://stepik.org/lesson/468542/step/1?unit=459366):
     4.1 Подключение Security. Аутентификация по умолчанию
-        Wiki: Аутентификация: https://ru.wikipedia
-        .org/wiki/%D0%90%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F
-        Wiki: Авторизация: https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F
         Common application Security properties: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#security-properties
+
+
+
+				=====================================================================
+
+
+
+
+
+
+
+
 
     4.2 Конфигурирование в коде приложения. Password Encoding
         InMemory Аутентификация: https://www.techiedelight.com/form-based-authentication-in-spring-boot-security/
