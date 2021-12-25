@@ -80,20 +80,20 @@
         Spring REST and HAL Browser: https://www.baeldung.com/spring-rest-hal
         HAL vs HATEOAS: https://stackoverflow.com/questions/25819477/548473
 
-
-
-				======================================================================
-
-
-
-
-
-
-
-
-    3.2 Конфигурирование Jackson
+    3.2 Конфигурирование Jackson (https://stepik.org/lesson/468541/step/1?unit=459365)
         Common application JSON properties: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#json-properties
         Аннотации Jackson: https://nsergey.com/jackson-annotations/
+
+
+
+=====================================================================
+
+
+
+
+
+
+
 
 
 К уроку 4 (https://javaops.ru/view/bootjava/lesson04):
