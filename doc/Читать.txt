@@ -115,28 +115,13 @@
         Access.WRITE_ONLY: https://stackoverflow.com/a/12505165/548473
 
 К уроку 5:
-    5.1 REST AccountController
+    5.1 REST AccountController (https://stepik.org/lesson/468547/step/1?unit=459371)
         Понимание REST: http://spring-projects.ru/understanding/rest/
         API you should be conservative when you reply, but accept liberally: http://stackoverflow.com/a/32728226/548473
         10 Best Practices for Better RESTful API: https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291
         15 тривиальных фактов о правильной работе с протоколом HTTP: https://habr.com/ru/company/yandex/blog/265569/
 
-
-=====================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-    5.2 Error handling
+    5.2 Error handling (https://stepik.org/lesson/468548/step/1?unit=459372)
         Spring rest error handling example  https://mkyong.com/spring-boot/spring-rest-error-handling-example
         Server Properties   https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties
         Using ErrorAttributes in our custom ErrorController https://www.logicbig.com/tutorials/spring-framework/spring-boot/error-attributes.html
