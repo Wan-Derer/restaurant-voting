@@ -85,7 +85,7 @@
         Аннотации Jackson: https://nsergey.com/jackson-annotations/
 
 
-К уроку 4 (https://stepik.org/lesson/468542/step/1?unit=459366):
+К уроку 4:
     4.1 Подключение Security. Аутентификация по умолчанию (https://stepik.org/lesson/468542/step/1?unit=459366)
         Common application Security properties: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#security-properties
 
@@ -114,6 +114,13 @@
         Password encoding with Spring Data REST: https://stackoverflow.com/questions/30260582/548473
         Access.WRITE_ONLY: https://stackoverflow.com/a/12505165/548473
 
+К уроку 5:
+    5.1 REST AccountController
+        Понимание REST: http://spring-projects.ru/understanding/rest/
+        API you should be conservative when you reply, but accept liberally: http://stackoverflow.com/a/32728226/548473
+        10 Best Practices for Better RESTful API: https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291
+        15 тривиальных фактов о правильной работе с протоколом HTTP: https://habr.com/ru/company/yandex/blog/265569/
+
 
 =====================================================================
 
@@ -128,13 +135,6 @@
 
 
 
-
-К уроку 5 (https://javaops.ru/view/bootjava/lesson05):
-    5.1 REST AccountController
-        Понимание REST: http://spring-projects.ru/understanding/rest/
-        API you should be conservative when you reply, but accept liberally: http://stackoverflow.com/a/32728226/548473
-        10 Best Practices for Better RESTful API: https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291
-        15 тривиальных фактов о правильной работе с протоколом HTTP: https://habr.com/ru/company/yandex/blog/265569/
 
     5.2 Error handling
         Spring rest error handling example  https://mkyong.com/spring-boot/spring-rest-error-handling-example
