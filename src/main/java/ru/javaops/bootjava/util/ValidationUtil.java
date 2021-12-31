@@ -14,7 +14,7 @@ public class ValidationUtil {
     //  Conservative when you reply, but accept liberally (http://stackoverflow.com/a/32728226/548473)
     public static void assureIdCosistent(BaseEntity entity, int id) {
         if (entity.isNew()) entity.setId(id);
-        else if (entity.getId() != id) throw new IllegalRequestDataException(
+        else if (entity.id() != id) throw new IllegalRequestDataException(
                 entity.getClass().getSimpleName() + " должен иметь id = " + id);
     }
 }

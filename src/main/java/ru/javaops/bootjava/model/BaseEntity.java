@@ -23,7 +23,7 @@ public abstract class BaseEntity implements Persistable<Integer> {
     protected Integer id;
 
     // doesn't work for hibernate lazy proxy
-    public Integer getId() {
+    public Integer id() {
         Assert.notNull(id, "Entity должен иметь id");
         return id;
     }

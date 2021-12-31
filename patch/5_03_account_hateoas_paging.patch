@@ -1,0 +1,160 @@
+Index: src/main/resources/application.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/application.yaml	(revision c1a0e1fa255beef82426bae175c1132f8fe591d8)
++++ src/main/resources/application.yaml	(date 1606235764035)
+@@ -31,6 +31,7 @@
+   data.rest:
+     #  https://docs.spring.io/spring-data/rest/docs/current/reference/html/#getting-started.basic-settings
+     basePath: /api
++    defaultPageSize: 20
+     returnBodyOnCreate: true
+ 
+ #  https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#security-properties
+@@ -46,6 +47,12 @@
+     ru.javaops.bootjava: DEBUG
+ #    org.springframework.security.web.FilterChainProxy: DEBUG
+ 
++server.servlet:
++  encoding:
++    charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
++    enabled: true # Enable http encoding support
++    force: true
++
+ # Jackson Serialization Issue Resolver
+ #  jackson:
+ #    visibility.field: any
+Index: src/main/java/ru/javaops/bootjava/web/AccountController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/ru/javaops/bootjava/web/AccountController.java	(revision c1a0e1fa255beef82426bae175c1132f8fe591d8)
++++ src/main/java/ru/javaops/bootjava/web/AccountController.java	(date 1606235745786)
+@@ -2,6 +2,11 @@
+ 
+ import lombok.AllArgsConstructor;
+ import lombok.extern.slf4j.Slf4j;
++import org.springframework.data.rest.webmvc.RepositoryLinksResource;
++import org.springframework.hateoas.EntityModel;
++import org.springframework.hateoas.MediaTypes;
++import org.springframework.hateoas.server.RepresentationModelProcessor;
++import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
+ import org.springframework.http.HttpStatus;
+ import org.springframework.http.MediaType;
+ import org.springframework.http.ResponseEntity;
+@@ -18,18 +23,37 @@
+ import java.net.URI;
+ import java.util.Set;
+ 
++import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
++
++/**
++ * Do not use {@link org.springframework.data.rest.webmvc.RepositoryRestController (BasePathAwareController}
++ * Bugs:
++ * NPE with http://localhost:8080/api/account<br>
++ * <a href="https://github.com/spring-projects/spring-hateoas/issues/434">data.rest.base-path missed in HAL links</a><br>
++ * <a href="https://jira.spring.io/browse/DATAREST-748">Two endpoints created</a>
++ * <p>
++ * RequestMapping("/${spring.data.rest.basePath}/account") give "Not enough variable values"
++ */
+ @RestController
+-@RequestMapping(value = "/api/account")
++@RequestMapping("/api/account")
+ @AllArgsConstructor
+ @Slf4j
+-public class AccountController {
++public class AccountController implements RepresentationModelProcessor<RepositoryLinksResource> {
++    @SuppressWarnings("unchecked")
++    private static final RepresentationModelAssemblerSupport<User, EntityModel<User>> ASSEMBLER =
++            new RepresentationModelAssemblerSupport<>(AccountController.class, (Class<EntityModel<User>>) (Class<?>) EntityModel.class) {
++                @Override
++                public EntityModel<User> toModel(User user) {
++                    return EntityModel.of(user, linkTo(AccountController.class).withSelfRel());
++                }
++            };
+ 
+     private final UserRepository userRepository;
+ 
+-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+-    public User get(@AuthenticationPrincipal AuthUser authUser) {
++    @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
++    public EntityModel<User> get(@AuthenticationPrincipal AuthUser authUser) {
+         log.info("get {}", authUser);
+-        return authUser.getUser();
++        return ASSEMBLER.toModel(authUser.getUser());
+     }
+ 
+     @DeleteMapping
+@@ -39,9 +63,9 @@
+         userRepository.deleteById(authUser.id());
+     }
+ 
+-    @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
++    @PostMapping(value = "/register", consumes = MediaTypes.HAL_JSON_VALUE)
+     @ResponseStatus(value = HttpStatus.CREATED)
+-    public ResponseEntity<User> register(@Valid @RequestBody User user) {
++    public ResponseEntity<EntityModel<User>> register(@Valid @RequestBody User user) {
+         log.info("register {}", user);
+         ValidationUtil.checkNew(user);
+         user.setRoles(Set.of(Role.USER));
+@@ -49,7 +73,7 @@
+         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
+                 .path("/api/account")
+                 .build().toUri();
+-        return ResponseEntity.created(uriOfNewResource).body(user);
++        return ResponseEntity.created(uriOfNewResource).body(ASSEMBLER.toModel(user));
+     }
+ 
+     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+@@ -64,4 +88,18 @@
+         }
+         userRepository.save(user);
+     }
++
++/*
++    @GetMapping(value = "/pageDemo", produces = MediaTypes.HAL_JSON_VALUE)
++    public PagedModel<EntityModel<User>> pageDemo(Pageable page, PagedResourcesAssembler<User> pagedAssembler) {
++        Page<User> users = userRepository.findAll(page);
++        return pagedAssembler.toModel(users, ASSEMBLER);
++    }
++*/
++
++    @Override
++    public RepositoryLinksResource process(RepositoryLinksResource resource) {
++        resource.add(linkTo(AccountController.class).withRel("account"));
++        return resource;
++    }
+ }
+Index: src/main/java/ru/javaops/bootjava/repository/UserRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/ru/javaops/bootjava/repository/UserRepository.java	(revision c1a0e1fa255beef82426bae175c1132f8fe591d8)
++++ src/main/java/ru/javaops/bootjava/repository/UserRepository.java	(date 1606235745780)
+@@ -1,12 +1,13 @@
+ package ru.javaops.bootjava.repository;
+ 
++import org.springframework.data.domain.Page;
++import org.springframework.data.domain.Pageable;
+ import org.springframework.data.jpa.repository.JpaRepository;
+ import org.springframework.data.jpa.repository.Query;
+ import org.springframework.data.rest.core.annotation.RestResource;
+ import org.springframework.transaction.annotation.Transactional;
+ import ru.javaops.bootjava.model.User;
+ 
+-import java.util.List;
+ import java.util.Optional;
+ 
+ @Transactional(readOnly = true)
+@@ -17,5 +18,5 @@
+     Optional<User> findByEmailIgnoreCase(String email);
+ 
+     @RestResource(rel = "by-lastname", path = "by-lastname")
+-    List<User> findByLastNameContainingIgnoreCase(String lastName);
++    Page<User> findByLastNameContainingIgnoreCase(String lastName, Pageable page);
+ }
+\ No newline at end of file
