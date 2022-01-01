@@ -127,7 +127,7 @@
         Using ErrorAttributes in our custom ErrorController https://www.logicbig.com/tutorials/spring-framework/spring-boot/error-attributes.html
         Скрещиваем ResponseEntityExceptionHandler и DefaultErrorAttributes  https://stackoverflow.com/a/64866190/548473
 
-		5.3 Добавление HATEOAS в AccountController. Paging (https://stepik.org/lesson/468549/step/1?unit=459373)
+		5.3 Добавление HATEOAS в AccountController. Paging	https://stepik.org/lesson/468549/step/1?unit=459373
 				Overriding Spring Data REST Response Handlers	https://docs.spring.io/spring-data/rest/docs/current/reference/html/#customizing-sdr.overriding-sdr-response-handlers
 				Spring HATEOAS 1.x migration	https://docs.spring.io/spring-hateoas/docs/current/reference/html/#migrate-to-1.0.changes.representation-models
 				Add links to HAL root	https://stackoverflow.com/questions/23135756/548473
@@ -135,3 +135,14 @@
 				Examples Spring HATEOAS in the simplest way	https://github.com/spring-projects/spring-hateoas-examples/tree/master/simplified
 				Examples Spring HATEOAS	https://github.com/spring-projects/spring-hateoas-examples#spring-hateoas-modules
 				Add links via configuration	https://github.com/niggusch/spring-data-rest-hal-custom
+
+К уроку 6:
+		6.1 Документирование REST API: Swagger / OpenAPI 3.0	https://stepik.org/lesson/637903/step/1?unit=634371
+				Использование Swagger/OpenAPI Specification	https://habr.com/ru/company/jugru/blog/525298/
+				Spring REST Docs — генерация документации на основе тестов	https://spring.io/projects/spring-restdocs
+				OpenAPI/Swagger - генерация документации на основе Spring контроллеров	https://swagger.io/docs/specification/about/
+				Есть 2 способа подключения OpenAPI 3.0 в Spring Boot проект:
+					через Springdoc-openapi	https://springdoc.org/
+					через Springfox	https://springfox.github.io/springfox/docs/current
+				Аннотации Swagger-2.X	https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Annotations
+				Документация на этапе сборки и автогенерация кода для API с помощью плагинов Maven	https://habr.com/ru/post/541592/
